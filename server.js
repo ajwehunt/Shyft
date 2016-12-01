@@ -8,10 +8,11 @@ var session = require('express-session');
 var db = massive.connectSync({ db : "shyftdb"});
 
 
+
 // facebook oAuth
 var passport = require('passport')
 // passkey
-var config = require('./configFB/auth.js');
+var config = require('./config');
 // fb Strategy ? do i need the OAuth2Strategy on the end of line
 var FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -82,7 +83,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(session({
-    secret: config.config.secret,
+    secret: config.secret,
     saveUninitialized: true,
     resave: true
 }));
@@ -134,7 +135,7 @@ app.get('/auth/facebook',  passport.authenticate('facebook',  { scope: 'public_p
 // Facebook will redirect the user to this URL after approval.
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/rides', failureRedirect: '/' }));
 
-var port = 8000;
+var port = config.port;
 app.listen(port, function(){
   console.log('Shyft: Port ' + port + ' is listening.');
 });
