@@ -7,7 +7,7 @@ export function getCities() {
 
 export function getCityZip(lat, lng) {
 
-  var results =  axios.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat.toString() + ',' + lng.toString() + '&key=AIzaSyC1Re0Gw6OIAb7Y5_Ax81XkqJ_htai7_Jo')
+  var results =  axios.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat.toString() + ',' + lng.toString())
   .then(function(res){
     var address = res.data.results[0].formatted_address;
     var zip = address.slice(address.length-10, address.length-5)
