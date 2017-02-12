@@ -1,5 +1,6 @@
 body:after{
     position:absolute; z-index:-1;
+    display: none;
     content: url(https://cdn.lyft.net/brochure/images/whyilyft-7-nyc.05994626.jpg) url(https://cdn.lyft.net/brochure/images/whyilyft-2-coffee.b2dab586.jpg) url(https://cdn.lyft.net/brochure/images/whyilyft-1-windshield.db7c8d1d.jpg) url(https://cdn.lyft.net/brochure/images/whyilyft-3-mom.7b5dfd46.jpg) url(https://cdn.lyft.net/brochure/images/whyilyft-4-profile.8b01a30e.jpg) url(https://cdn.lyft.net/brochure/images/whyilyft-5-backseat.ea3b7cce.jpg) url(https://cdn.lyft.net/brochure/images/whyilyft-6-night.ad428c78.jpg);
 }
 
